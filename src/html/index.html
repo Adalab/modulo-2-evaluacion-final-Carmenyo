@@ -1,12 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Evaluación final Carmen Castro</title>
   </head>
   <body>
-    Ejercicio
+
+    <main>
+  <h1>Buscador de Cócteles</h1>
+  <form action="">
+    <!-- Buscador -->
+    <input
+    class="js-searchInput" 
+    type="text"
+    name="search"
+    placeholder="Ej.Nombre del cóctel"
+    />
+    <!--  Botón de búsqueda -->
+    <input type="button" value="Buscar" class="form__button js-searchButton" />
+    <input type="button" value="Reset" class="form__reset" />
+  </form>
+
+  <div class="container">
+
+    <!-- Lista de Favoritos -->
+    <section class="section__fav">
+      <h2 class="section__fav-title">Mis cócteles Favoritos</h2>
+      <ul class="list-favorite"></ul>
+    </section>
+    
+    <!-- Lista principal -->
+
+    <ul class="main__list js-main-list"></ul>
+  </div>
+
+    
+  </main>
+
+  </form>
+
+     
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
