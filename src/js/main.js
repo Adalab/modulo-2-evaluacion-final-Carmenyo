@@ -10,6 +10,7 @@ const defaultImage =
 const reset = document.querySelector(".js-formReset");
 
 let drinks = [];
+let favorite =[];
 
 // Funciones
 function connectApi() {
@@ -33,8 +34,14 @@ function connectApi() {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.drinks);
-      drinks = data.drinks;
+      drinks = data.drinks.map ((product) => {
+        const newDrink = {
+        idDrink: product.idDrink,
+        strDrink: product.strDrink,
+        strDrinkThumb: product.strDrinkThumb,
+        };
+        return newDrink;
+      });
       paintDrinks();
     });
 }
@@ -43,3 +50,5 @@ function handleClick() {
 }
 
 searchButton.addEventListener("click", handleClick);
+
+  
