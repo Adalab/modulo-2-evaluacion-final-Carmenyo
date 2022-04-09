@@ -12,8 +12,6 @@ const reset = document.querySelector(".js-formReset");
 let drinks = [];
 let favorite =[];
 
-// Funciones
-
 function handleClick() {
   connectApi();
 }
@@ -53,6 +51,51 @@ function listenListDrinks() {
   for (const drink of listDrinks) {
     drink.addEventListener("click", getFavDrinks);
   }
+}
+
+function getFavDrinks(event) {
+
+  const selectedDrink = parseInt(event.currentTarget.id);
+
+  //console.log(drinks);
+  const clickedDrink = drinks.find((data) => {
+    return data.idDrink == selectedDrink;
+  });
+
+  console.log(clickedDrink);
+
+  const favoritesCheck = favorites.findIndex((data) => {
+    return data.idDrink == selectedDrink;
+  });
+
+  console.log(favoritesCheck);
+  if (favoritesCheck === -1) {
+    favorites.push(clickedDrink);
+  } else {
+    favorites.splice(favoritesCheck, 1);
+  }
+  paintFavorites();
+}
+function paintFavorites() {
+  let html2 = "";
+  for (const favorite of favorites) {
+    if (favorite.strDrinkThumb !== " ") {
+      html2 += `
+                  <li id="${favorite.idDrink}"  >
+                  <h2>${favorite.strDrink}</h2>
+                  <img src="${favorite.strDrinkThumb}"/>
+                  </li>
+                `;
+    } else {
+      html2 += `
+                        <li id="${favorite.idDrink}" > >
+                        <h2>${favorite.strDrink}</h2>
+                        <img src="${defaultImage}"/>
+                        </li>
+              `;
+    }
+  }
+  favoriteList.innerHTML = html2;
 }
 
 
