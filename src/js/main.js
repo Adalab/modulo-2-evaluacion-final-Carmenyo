@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 "use strict";
 
 const searchButton = document.querySelector(".js-searchButton");
@@ -10,40 +9,55 @@ const defaultImage =
 const reset = document.querySelector(".js-formReset");
 
 let drinks = [];
-let favorite =[];
+let favorites = [];
 
+if (localStorage.getItem("selected") !== null) {
+  getLocalStorage();
+}
+
+// Funciones
 function handleClick() {
   connectApi();
 }
 function connectApi() {
   let inputValue = inputNameCocktail.value.toLowerCase();
   fetch(
-      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        drinks = data.drinks.map ((product) => {
-          const newDrink = {
+    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      drinks = data.drinks.map((product) => {
+        const newDrink = {
           idDrink: product.idDrink,
           strDrink: product.strDrink,
           strDrinkThumb: product.strDrinkThumb,
-          };
-          return newDrink;
-        });
-        paintDrinks();
+        };
+        return newDrink;
       });
+      paintDrinks();
+    });
 }
+
 function paintDrinks() {
   let html = "";
   for (const drinkItem of drinks) {
+    if (drinkItem.strDrinkThumb !== "") {
       html += `
-      <li>
+        <li id="${drinkItem.idDrink}" class="js-cocktail">
+        <h2>${drinkItem.strDrink}</h2>
+        <img class="js-image" src="${drinkItem.strDrinkThumb}">
+        </li>`;
+    } else {
+      html += `
+      <li id="${drinkItem.idDrink}" class="js-cocktail">
       <h2>${drinkItem.strDrink}</h2>
-      <img src="${drinkItem.strDrinkThumb}"/>
+      <img class="js-image" src="${defaultImage}">
       </li>`;
     }
-    resultList.innerHTML = html;
-    listenListDrinks();
+  }
+
+  resultList.innerHTML = html;
+  listenListDrinks();
 }
 
 function listenListDrinks() {
@@ -57,7 +71,6 @@ function getFavDrinks(event) {
 
   const selectedDrink = parseInt(event.currentTarget.id);
 
-  //console.log(drinks);
   const clickedDrink = drinks.find((data) => {
     return data.idDrink == selectedDrink;
   });
@@ -74,6 +87,19 @@ function getFavDrinks(event) {
   } else {
     favorites.splice(favoritesCheck, 1);
   }
+
+  console.log(favorites);
+  setLocalStorage();
+
+  paintFavorites();
+}
+
+function setLocalStorage() {
+  localStorage.setItem("selected", JSON.stringify(favorites));
+}
+
+function getLocalStorage() {
+  favorites = JSON.parse(localStorage.getItem("selected"));
   paintFavorites();
 }
 function paintFavorites() {
@@ -83,22 +109,19 @@ function paintFavorites() {
       html2 += `
                   <li id="${favorite.idDrink}"  >
                   <h2>${favorite.strDrink}</h2>
-                  <img src="${favorite.strDrinkThumb}"/>
+                  <img class="js-image" src="${favorite.strDrinkThumb}"/>
                   </li>
                 `;
     } else {
       html2 += `
                         <li id="${favorite.idDrink}" > >
                         <h2>${favorite.strDrink}</h2>
-                        <img src="${defaultImage}"/>
-                        </li>
-              `;
+                        <img class="js-image" src="${defaultImage}"/>
+                        </li>`;
     }
   }
+  
   favoriteList.innerHTML = html2;
 }
 
-
 searchButton.addEventListener("click", handleClick);
-
-  

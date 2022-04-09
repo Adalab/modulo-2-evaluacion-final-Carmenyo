@@ -12,38 +12,9 @@
     <title>Evaluación final Carmen Castro</title>
   </head>
   <body>
-    <main class="main">
-  <h1 class="title">Buscador de Cócteles</h1>
-  <form action="">
-    <!-- Buscador -->
-    <input
-    class="js-searchInput" 
-    type="text"
-    name="search"
-    placeholder="Ej.Nombre del cóctel"
-    />
-    <!--  Botón de búsqueda -->
-    <input type="button" value="Buscar" class="form__button js-searchButton" />
-    <input type="button" value="Reset" class="form__reset js-formReset" />
-  </form>
-
-  <div class="container">
-
-    <!-- Lista de Favoritos -->
-    <section class="section__fav">
-      <h2 class="section__fav-title">Mis cócteles favoritos</h2>
-      <ul class="list-favorite js-main-listfav"></ul>
-    </section>
-
-    <!-- Lista principal -->
-
-    <ul class="main__list js-main-list"></ul>
-
-  </div>
-</form>
-
-</main>
-
+  <include src="./partials/header.html"></include>
+  <include src="./partials/main.html"></include>
+  <include src="./partials/footer.html"></include>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

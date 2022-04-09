@@ -1,0 +1,60 @@
+.main__form{
+display: flex;
+flex-direction: column;
+text-align: center;
+align-items: center;
+gap: 5px;
+width: 100%;
+padding: 20px;
+margin-top: 50px;
+
+&--input{
+    background-color: black;
+    color: azure;
+    border: none;
+}
+
+&--buttons{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    gap: 10px;
+    margin-top: 10px;
+}
+}
+.main__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
+    &__sectionfavlist{
+    width: auto;
+    height: auto;
+   
+    &--title{
+    font-weight: $fontweight-regular;
+    font-family: $fontfamily;
+    font-size: 15px;
+    }    
+
+    &--list{
+   
+        }
+    }
+&__sectionmainlist{
+    width: auto;
+    height: auto;
+
+}
+}
+
+
+
+
+.js-image{
+    width: 120px;
+    height: 150px;
+}
+
+
