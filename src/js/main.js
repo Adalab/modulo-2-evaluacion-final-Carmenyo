@@ -13,41 +13,48 @@ let drinks = [];
 let favorite =[];
 
 // Funciones
+
+function handleClick() {
+  connectApi();
+}
 function connectApi() {
   let inputValue = inputNameCocktail.value.toLowerCase();
-
-  function paintDrinks() {
-    let html = "";
-    for (const drinkItem of drinks) {
+  fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        drinks = data.drinks.map ((product) => {
+          const newDrink = {
+          idDrink: product.idDrink,
+          strDrink: product.strDrink,
+          strDrinkThumb: product.strDrinkThumb,
+          };
+          return newDrink;
+        });
+        paintDrinks();
+      });
+}
+function paintDrinks() {
+  let html = "";
+  for (const drinkItem of drinks) {
       html += `
       <li>
       <h2>${drinkItem.strDrink}</h2>
       <img src="${drinkItem.strDrinkThumb}"/>
-      </li>
-    `;
+      </li>`;
     }
     resultList.innerHTML = html;
-  }
+    listenListDrinks();
+}
 
-  fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      drinks = data.drinks.map ((product) => {
-        const newDrink = {
-        idDrink: product.idDrink,
-        strDrink: product.strDrink,
-        strDrinkThumb: product.strDrinkThumb,
-        };
-        return newDrink;
-      });
-      paintDrinks();
-    });
+function listenListDrinks() {
+  const listDrinks = document.querySelectorAll(".js-cocktail");
+  for (const drink of listDrinks) {
+    drink.addEventListener("click", getFavDrinks);
+  }
 }
-function handleClick() {
-  connectApi();
-}
+
 
 searchButton.addEventListener("click", handleClick);
 
