@@ -44,13 +44,13 @@ function paintDrinks() {
     if (drinkItem.strDrinkThumb !== "") {
       html += `
         <li id="${drinkItem.idDrink}" class="js-cocktail">
-        <h2>${drinkItem.strDrink}</h2>
+        <h2 class="js-titleDrink">${drinkItem.strDrink}</h2>
         <img class="js-image" src="${drinkItem.strDrinkThumb}">
         </li>`;
     } else {
       html += `
       <li id="${drinkItem.idDrink}" class="js-cocktail">
-      <h2>${drinkItem.strDrink}</h2>
+      <h2 class="js-titleDrink">${drinkItem.strDrink}</h2>
       <img class="js-image" src="${defaultImage}">
       </li>`;
     }
@@ -107,15 +107,17 @@ function paintFavorites() {
   for (const favorite of favorites) {
     if (favorite.strDrinkThumb !== " ") {
       html2 += `
-                  <li id="${favorite.idDrink}"  >
-                  <h2>${favorite.strDrink}</h2>
+                  <li class= "js-selectedDrink"id="${favorite.idDrink}">
+                  <h2 class="js-titleDrink">${favorite.strDrink}</h2>
+                  <img class="js-favicon" src="./assets/images/heart-solid.svg"/>
+
                   <img class="js-image" src="${favorite.strDrinkThumb}"/>
-                  </li>
-                `;
+                  </li>`;
     } else {
       html2 += `
-                        <li id="${favorite.idDrink}" > >
-                        <h2>${favorite.strDrink}</h2>
+                        <li id="${favorite.idDrink}">
+                        <h2>${favorite.strDrink}</h2> 
+                        <img class="js-favicon" src="./assets/images/heart-solid.svg"/>
                         <img class="js-image" src="${defaultImage}"/>
                         </li>`;
     }

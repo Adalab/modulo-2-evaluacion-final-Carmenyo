@@ -5,7 +5,9 @@
 body {
     width: 100vh;
     height: 100%;
-    align-items: center;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
     background-image: linear-gradient(hsl(33, 98%, 50%), hsl(2, 94%, 50%));
+    background-repeat:no-repeat ;
+    background-size: cover;
 }
