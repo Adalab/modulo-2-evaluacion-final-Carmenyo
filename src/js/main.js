@@ -4,6 +4,7 @@ const searchButton = document.querySelector(".js-searchButton");
 const inputNameCocktail = document.querySelector(".js-searchInput");
 const resultList = document.querySelector(".js-main-list");
 const favoriteList = document.querySelector(".js-main-listfav");
+const resetFav = document.querySelector(".js-favReset")
 const defaultImage =
   "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
 const reset = document.querySelector(".js-formReset");
@@ -109,21 +110,27 @@ function paintFavorites() {
       html2 += `
                   <li class= "js-selectedDrink"id="${favorite.idDrink}">
                   <h2 class="js-titleDrink">${favorite.strDrink}</h2>
-                  <img class="js-favicon" src="./assets/images/heart-solid.svg"/>
-
+                  
                   <img class="js-image" src="${favorite.strDrinkThumb}"/>
+                  <i id="${favorite.idDrink}" class="fa-solid fa-heart js-favicon"></i>
                   </li>`;
     } else {
       html2 += `
                         <li id="${favorite.idDrink}">
                         <h2>${favorite.strDrink}</h2> 
-                        <img class="js-favicon" src="./assets/images/heart-solid.svg"/>
                         <img class="js-image" src="${defaultImage}"/>
+                        <i id="${favorite.idDrink}" class="fa-solid fa-heart js-favicon"></i>
                         </li>`;
     }
   }
-  
   favoriteList.innerHTML = html2;
+}
+function resetLocalStorage(){
+  favorites = [];
+  localStorage.clear();
+  location.reload();
 }
 
 searchButton.addEventListener("click", handleClick);
+resetFav.addEventListener("click", resetLocalStorage)
+

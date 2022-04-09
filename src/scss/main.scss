@@ -1,13 +1,16 @@
+@import "core/reset";
 @import "core/variables";
 @import "layout/header";
 @import "layout/form";
+@import "layout/footer";
 
 body {
-    width: 100vh;
-    height: 100%;
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(hsl(33, 98%, 50%), hsl(2, 94%, 50%));
-    background-repeat:no-repeat ;
-    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
+

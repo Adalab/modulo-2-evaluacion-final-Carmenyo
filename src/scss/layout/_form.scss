@@ -4,61 +4,85 @@ flex-direction: column;
 text-align: center;
 align-items: center;
 gap: 5px;
-width: 100%;
 padding: 20px;
 margin-top: 50px;
+font-family: $fontfamily;
 
 &--input{
     background-color: black;
     color: azure;
     border: none;
+    font-family: $fontfamily;
 }
 
 &--buttons{
     display: flex;
     flex-direction: row;
-    width: 100px;
+    width: 200px;
     gap: 10px;
     margin-top: 10px;
-   
 }
 &--button{
     background-color: black;
     color: aliceblue;
-    border: none
+    border: none;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    font-family: $fontfamily;
 }
 &--reset{
     background-color: black;
     color: aliceblue;
-    border: none
+    border: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    font-family: $fontfamily;
 }
 }
 .main__container{
+    height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    
+    justify-content: flex-start;
+    align-content:flex-start;
+    font-family: $fontfamily;
 
     &__sectionfavlist{
     width: 250px;
     height: 100%;
-    border: solid 5px black;
+    margin-left: 20px;
     align-items: center;
     text-align: center;
-   
-   
-    &--title{
-    font-weight: $fontweight-regular;
+    margin-right: 50px;
     font-family: $fontfamily;
-    font-size: 15px;
-    }    
+    }   
 
-&__sectionmainlist{
-    width: 60%;
-    height: 100%;
+    } 
+    &--reset{
+        background-color: black;
+        color: aliceblue;
+        border: none;
+        width: 80px;
+        height: 30px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        margin-top: 15px;
+
 }
+
 }
+.js-favReset{
+
+}
+
+.js-main-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 600px;
 }
 .js-image{
     width: 80px;
@@ -76,5 +100,6 @@ margin-top: 50px;
     list-style: none;
 }
 .js-favicon{
-    width: 15px;
+    width: 20px;
+    color: purple;
 }
