@@ -70,38 +70,6 @@ font-family: $fontfamily;
         border-radius: 20px;
         margin-bottom: 20px;
         margin-top: 15px;
-
     }
 }
 
-
-.js-main-list{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-    max-width: 600px;
-}
-.js-image{
-    width: 80px;
-    height: 100px;
-    border: black solid 3px;
-}
-.js-cocktail{
-    list-style: none;
-}
-
-.js-titleDrink{
-    font-size: 12px;
-}
-.js-selectedDrink{
-    list-style: none;
-    border: solid 4px rgb(135, 200, 38);
-    color: rgb(135, 200, 38);
-    margin-bottom: 2px;
-    background-color: black;
-}
-.js-favicon{
-    width: 20px;
-    color: purple;
-}
