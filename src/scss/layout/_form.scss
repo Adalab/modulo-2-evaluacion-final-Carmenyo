@@ -75,10 +75,6 @@ font-family: $fontfamily;
 }
 
 
-.js-favReset{
-
-}
-
 .js-main-list{
     display: flex;
     flex-direction: row;
@@ -100,6 +96,10 @@ font-family: $fontfamily;
 }
 .js-selectedDrink{
     list-style: none;
+    border: solid 4px rgb(135, 200, 38);
+    color: rgb(135, 200, 38);
+    margin-bottom: 2px;
+    background-color: black;
 }
 .js-favicon{
     width: 20px;

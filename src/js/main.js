@@ -111,15 +111,14 @@ function paintFavorites() {
   for (const favorite of favorites) {
     if (favorite.strDrinkThumb !== " ") {
       html2 += `
-                  <li class= "js-selectedDrink"id="${favorite.idDrink}">
+                  <li class= "js-selectedDrink" id="${favorite.idDrink}">
                   <h2 class="js-titleDrink">${favorite.strDrink}</h2>
-                  
                   <img class="js-image" src="${favorite.strDrinkThumb}"/>
                   <i id="${favorite.idDrink}" class="fa-solid fa-heart js-favicon"></i>
                   </li>`;
     } else {
       html2 += `
-                        <li id="${favorite.idDrink}">
+                        <li class= "js-selectedDrink" id="${favorite.idDrink}">
                         <h2>${favorite.strDrink}</h2> 
                         <img class="js-image" src="${defaultImage}"/>
                         <i id="${favorite.idDrink}" class="fa-solid fa-heart js-favicon"></i>
