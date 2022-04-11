@@ -9,6 +9,8 @@ const resetFav = document.querySelector(".js-favReset")
 const defaultImage =
   "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
 
+// quitar elemento uno a uno  
+const faviconSelector = "js-favicon";
 
 let drinks = [];
 let favorites = [];

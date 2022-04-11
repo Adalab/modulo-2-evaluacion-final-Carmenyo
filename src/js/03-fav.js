@@ -48,5 +48,7 @@ function getFavDrinks(event) {
       }
     }
     favoriteList.innerHTML = html2;
+
+    document.querySelectorAll(`.${faviconSelector}`).forEach((favicon) => favicon.addEventListener ("click",handleFaviconClick));
   }
-  resetFav.addEventListener("click", resetLocalStorage)
+

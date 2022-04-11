@@ -12,4 +12,5 @@ function resetLocalStorage(){
   }
 
   reset.addEventListener ("click", resetMainList)
+  resetFav.addEventListener("click", resetLocalStorage)
 
