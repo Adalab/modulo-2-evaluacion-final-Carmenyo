@@ -17,7 +17,7 @@ Finally the user can remove the favorite cocktail from the Favorite List.
 
 ### Screenshot
 
-![./images/2challenge.jpg]
+![./assets/images/cocteles]
 
 ### Links
 
