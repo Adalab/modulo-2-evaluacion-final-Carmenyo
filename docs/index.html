@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/de34a2681d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Evaluación final Carmen Castro</title>
+  </head>
+  <body>
+  <header class="header">
+      <img class="header__img"
+      src="../assets/images/cocteles.jpeg" 
+      alt="bebidas" />
+      <h1 class="header__title">Buscador de Cócteles</h1>
+      </header>
+
+  
+      <main class="main">
+
+          <form class="main__form">
+          <!-- Buscador -->
+          <input class="main__form--input js-searchInput" 
+          type="text"
+          name="search"
+          placeholder="Nombre del cóctel"
+          />
+          <!--  Botón de búsqueda -->
+          <div class="main__form--buttons">
+          <input class="main__form--button js-searchButton"
+          type="button" value="Buscar"  />
+
+          <!--  Botón de Reset -->
+          <input class="main__form--reset js-formReset"
+          type="reset" value="Reset"  />
+          </div>
+          </form>
+
+          <div class="main__container">
+
+      <!-- Lista de Favoritos -->
+      
+          <section class="main__container__sectionfavlist">
+              <h2 class="main__container__sectionfav--title">Mis cócteles favoritos</h2>
+             
+              <ul class="main__container__fav--list js-main-listfav"></ul>
+          <!-- botón de Reset de Fav -->
+          <input class="main__container--reset js-favReset"
+          type="reset" value="Reset"  />
+          </section>
+      
+          <!-- Lista principal -->
+      
+          <ul class="main__container__sectionmainlist js-main-list"></ul>
+      
+          </div>
+      </form>
+      
+      </main>
+  <footer class="footer">
+      <small class="footer__copy"> &copy; Todos los derechos reservados </small>
+    </footer>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
