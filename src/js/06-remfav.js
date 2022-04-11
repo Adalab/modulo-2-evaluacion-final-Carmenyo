@@ -1,4 +1,4 @@
-function handleFaviconClick(event) {
+function handleFavIconClick(event) {
     const selectedDrink = parseInt (event.currentTarget.parentElement.id);
     const favoritesCheck = favorites.findIndex ((data)=> {
         return data.idDrink == selectedDrink;

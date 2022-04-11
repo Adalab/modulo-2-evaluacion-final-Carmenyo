@@ -49,6 +49,6 @@ function getFavDrinks(event) {
     }
     favoriteList.innerHTML = html2;
 
-    document.querySelectorAll(`.${faviconSelector}`).forEach((favicon) => favicon.addEventListener ("click",handleFaviconClick));
+    document.querySelectorAll(".js-favicon").forEach((favicon) => favicon.addEventListener ("click",handleFavIconClick));
   }
 
